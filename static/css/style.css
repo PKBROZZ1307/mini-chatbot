@@ -1,0 +1,142 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Chat Container */
+.chat-container {
+    width: 100%;
+    max-width: 600px;
+    height: 90vh;
+    margin: 5vh auto;
+    background: #f9f9f9;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    background: #0056d6;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Chat Window */
+#chat-window {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    background: #fff;
+}
+
+/* Chat Bubbles */
+.user-bubble, .bot-bubble {
+    max-width: 75%;
+    padding: 0.8rem 1rem;
+    border-radius: 20px;
+    position: relative;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.user-bubble {
+    background: #d4edda;
+    align-self: flex-end;
+    color: #155724;
+    border-top-right-radius: 0;
+}
+
+.bot-bubble {
+    background: #f1f1f1;
+    align-self: flex-start;
+    color: #333;
+    border-top-left-radius: 0;
+}
+
+/* Bubble Animation */
+.bubble-typing {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.bubble-typing span {
+    width: 8px;
+    height: 8px;
+    background: #ccc;
+    border-radius: 50%;
+    animation: typing 1.5s infinite;
+}
+
+.bubble-typing span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.bubble-typing span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0%, 100% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Input Area */
+#input-area {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: #f1f1f1;
+    gap: 0.5rem;
+    border-top: 1px solid #ddd;
+}
+
+#user-input {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 1rem;
+    outline: none;
+}
+
+#send-btn, #mic-btn {
+    background: #0056d6;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#send-btn:hover, #mic-btn:hover {
+    background: #003ba1;
+}
+
+#mic-btn img {
+    width: 20px;
+    height: 20px;
+}
